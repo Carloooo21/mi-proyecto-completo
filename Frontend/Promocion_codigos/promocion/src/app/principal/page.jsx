@@ -202,8 +202,6 @@ export default function Home() {
                 /* tamaño para XL */
                 xl:row-start-2
                 xl:col-start-2
-                xl:justify-self-end
-                xl:items-end
                 xl:pt-20
 ">
                     <div className="w-full max-w-xs sm:max-w-sm md:max-w-md md:justify-center md:content-center xl:mr-10">
