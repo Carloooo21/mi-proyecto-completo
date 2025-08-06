@@ -25,8 +25,9 @@ export default function Home() {
                 {/* LOGO - CAMBIOS PRINCIPALES AQUÍ */}
                 <div
                     className={`
+                        w-60
                         row-start-1 col-span-full
-                        flex justify-center
+                        flex justif-center
                         w-40 sm:w-44 md:w-48 lg:w-52 xl:w-70
                         mb-6 sm:mb-8 md:mb-0
                         z-20
@@ -71,39 +72,40 @@ export default function Home() {
                 </div>
 
                 {/* TÍTULO */}
-                <h1 className="
+                <h1 style={{
+                fontSize: 'clamp(30px, 5vw, 45px)',
+                fontFamily: 'cursive'
+                }} className="
                 text-black
-          row-start-2 col-span-full 
-          md:col-start-1 md:row-start-1 
-          text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 
-          font-bold 
-          text-center md:text-left 
-          mb-6 sm:mb-8 md:mb-0 
-          md:self-center
-          /* Cambio para md */
-          sm:row-start-2
-          sm:col-start-1
-          sm:mb[200px]
+                row-start-2 col-span-full
+                md:col-start-1 md:row-start-2
+                text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl
+                font-bold
+                text-center md:text-left
+                mb-6 sm:mb-8 md:mb-0
+                md:self-center
+                /* Cambio para md */
+                sm:row-start-2
+                sm:col-start-1
+                sm:mb[200px]
 
-          
-
-          /* Cambio para LG */
-          lg:row-start-1 
-          lg:col-start-1 
-          lg:self-center
-          /* Cambio para XL */
-          xl:row-start-1 
-          xl:col-start-1 
-          xl:self-center
-          xl:ml-[20vh]
+                /* Cambio para LG */
+                lg:row-start-2
+                lg:col-start-1
+                lg:self-center
+                /* Cambio para XL */
+                xl:row-start-1
+                xl:col-start-1
+                xl:self-center
+                xl:ml-[20vh]
         ">
-                    ¡Reclama aquí tu beneficio exclusivo!
-                </h1>
+                ¡Reclama aquí tu beneficio exclusivo!
+            </h1>
 
-                {/* PERSONAJE */}
-                <div className="
+            {/* PERSONAJE */}
+            <div className="
                     row-start-2 md:row-start-3 
-                    col-span-full mt-[20vh]
+                    col-span-full mt-[10vh]
                     flex justify-center md:justify-center 
                     md:mt-8 pt-4 
                     /* Cambio para sm */
@@ -114,6 +116,7 @@ export default function Home() {
                      /* Cambio para md */
                     md:row-start-3
                     md:col-span-full
+                    md:mr-[40px]
                     md:justify-center
                     md:items-center
                     /* Cambio para lg */
@@ -131,10 +134,10 @@ export default function Home() {
                     xl:items-end
                     lg:pt-0
                     xl:pt-0
-                    xl:mr-[100vh]
+                    xl:mr-[80vh]
                     ">
-                    {/* Contenedor de la imagen con nuevos tamaños */}
-                    <div className="
+                {/* Contenedor de la imagen con nuevos tamaños */}
+                <div className="
                         w-2/3 sm:w-1/2 md:w-1/2 
                         /* Tamaños ajustados para LG y XL */
                         lg:w-[300px] 
@@ -145,20 +148,22 @@ export default function Home() {
                         /* Alineación al fondo */
                         self-end
   ">
-                        <Image
-                            src="/Personaje-1 (1) (1).png"
-                            alt="Personaje"
-                            fill
-                            className="object-contain"
-                        />
-                        {/* Texto sobre imagen */}
-                        <h1 className="
-                        /* --- VISIBILIDAD RESPONSIVA --- */
+                    <Image
+                        src="/Personaje-1 (1) (1).png"
+                        alt="Personaje"
+                        fill
+                        className="object-contain"
+                    />
+                    {/* Texto sobre imagen */}
+                    <h1 style={{
+                        fontSize: '40px',
+                    }}
+                        className="
                         hidden /* Oculto por defecto en todos los tamaños */
                         md:block /* Visible a partir de md (768px) */
                         md:flex  /* Necesario para mantener el centrado flex */
                         font-poppins
-                        text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl
+                        lg:text-6x1
                         font-bold sm:font-bold md:font-bold lg:fond-bold xl:fond-bold
                         absolute inset-x-0 bottom-0      /* ocupa todo el contenedor */
                         flex                  /* para centrar fácilmente */
@@ -175,13 +180,13 @@ export default function Home() {
 
           
                 ">
-                            Tu voucher te esta esperando
-                        </h1>
-                    </div>
+                        Tu voucher te esta esperando
+                    </h1>
                 </div>
+            </div>
 
-                {/* FORMULARIO  */}
-                <div className="
+            {/* FORMULARIO  */}
+            <div className="
                 row-start-3 md:row-start-2 
                 col-span-full md:col-span-2
                 flex justify-center items-center 
@@ -198,18 +203,18 @@ export default function Home() {
                 lg:row-start-4
                 lg:justify-center
                 lg:items-center
-                lg:ml-[30vh]
+                lg:ml-[20vh]
                 /* tamaño para XL */
                 xl:row-start-2
                 xl:col-start-2
                 xl:pt-20
 ">
-                    <div className="w-full max-w-xs sm:max-w-sm md:max-w-md md:justify-center md:content-center xl:mr-10">
-                        <RegisterForm />
-                    </div>
+                <div className="w-full max-w-xs sm:max-w-sm md:max-w-md md:justify-center md:content-center xl:mr-10">
+                    <RegisterForm />
                 </div>
-
             </div>
-        </main>
+
+        </div>
+        </main >
     )
 }

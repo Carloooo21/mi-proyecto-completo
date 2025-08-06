@@ -40,7 +40,7 @@ export default function RegisterForm() {
 
     const inputStyle = {
         width: '100%',
-        padding: '12px 15px',
+        padding: '10px 5px',
         fontSize: '16px',
         border: '1px solid #ddd',
         borderRadius: '8px',
@@ -82,7 +82,6 @@ export default function RegisterForm() {
                         text-white
                         max-h-[70vh]
                         overflow-y-auto
-                        pr-4
                         scrollbar-thin
                         scrollbar-thumb-rounded-full
                         scrollbar-track-rounded-full
@@ -99,7 +98,7 @@ export default function RegisterForm() {
                         marginBottom: '25px'
                     }}>
                         <div>
-                            <div style={{ marginBottom: '25x' }}>
+                            <div style={{ marginBottom: '25px' }}>
                                 <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500', color: 'white' }}>
                                     Sector de industria
                                 </label>
