@@ -26,9 +26,11 @@
         <tag/>
         <url/>
     </scm>
-    <properties>
-        <java.version>24</java.version>
-    </properties>
+        <properties>
+            <java.version>24</java.version>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -81,6 +83,12 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
         <plugins>
             <!-- tu plugin de compilación de Java aquí -->
             <plugin>
