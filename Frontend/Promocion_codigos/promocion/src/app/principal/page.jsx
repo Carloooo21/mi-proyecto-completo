@@ -27,7 +27,7 @@ export default function Home() {
                     className={`
                         w-60
                         row-start-1 col-span-full
-                        flex justif-center
+                        flex justify-center
                         w-40 sm:w-44 md:w-48 lg:w-52 xl:w-70
                         mb-6 sm:mb-8 md:mb-0
                         z-20
