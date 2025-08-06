@@ -82,6 +82,23 @@
 
     <build>
         <plugins>
+            <!-- tu plugin de compilación de Java aquí -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.5.4</version>
+                <configuration>
+                    <!-- cambia este valor por el paquete completo de tu clase con main() -->
+                    <mainClass>com.example.registro.RegistroApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
