@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "https://mi-proyecto-completo-n8se.vercel.app",
+@CrossOrigin(origins = "https://mi-proyecto-completo-krmp.vercel.app",
         methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS },
         allowedHeaders = "*")
 @RestController
