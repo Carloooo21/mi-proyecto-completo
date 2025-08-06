@@ -11,7 +11,7 @@ export default function useRegister() {
     const [codigoDescuento, setCodigoDescuento] = useState("");
     const [expiracionCodigo, setExpiracionCodigo] = useState("")
     const [mensaje, setMensaje] = useState("");
-    const [mostrarCard, setMostrarCard]=useState(false)
+    const [mostrarCard, setMostrarCard] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -26,23 +26,25 @@ export default function useRegister() {
             nombreEmpresa
         }
         try {
+            const baseUrl = process.env.NEXT_PUBLIC_API_URL;
             //Peticion API interna
-            const res = await fetch("http://localhost:8080/api/usuario/public/registro", {
+            const res = await fetch(`${baseUrl}/api/usuario/public/registro`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             })
 
             if (!res.ok) {
-                const errorText = await res.text()
-                setMensaje("Error al servidor: ", errorText)
+                const errorText = await res.text();
+                setMensaje(`Error en el servidor: ${errorText}`);
                 return;
             }
 
 
+
             const data = await res.json();
 
-            const now = Date.now.toString;
+            const now = Date.now().toString();
             // Guardar código y expiración
             setCodigoDescuento(data.codigoDescuento ?? "");
             setExpiracionCodigo(data.expiracionCodigo ?? "");
@@ -50,8 +52,11 @@ export default function useRegister() {
 
             //Guarda codigo de descuento
             // Correcto: Pasar dos argumentos (clave, valor)
-            localStorage.setItem('codigoDescuento', data.setCodigoDescuento);
-            localStorage.setItem('expiracionCodigo', new Date(data.setExpiracionCodigo).toISOString);
+            localStorage.setItem('codigoDescuento', data.codigoDescuento ?? "");
+            localStorage.setItem(
+                'expiracionCodigo',
+                new Date(data.expiracionCodigo).toISOString()
+            );
 
             setMensaje("Registro exitoso")
 
