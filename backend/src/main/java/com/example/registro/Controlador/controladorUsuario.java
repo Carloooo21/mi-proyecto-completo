@@ -8,17 +8,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+@CrossOrigin(origins = "https://mi-proyecto-completo-n8se.vercel.app",
+        methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS },
+        allowedHeaders = "*")
 @RestController
-@RequestMapping("api/usuario/")
-@CrossOrigin(origins =
-        {"http://localhost:3000",
-        "https://mi-proyecto-completo.vercel.app"})
+@RequestMapping("api/usuario")
 public class controladorUsuario {
 
     @Autowired
