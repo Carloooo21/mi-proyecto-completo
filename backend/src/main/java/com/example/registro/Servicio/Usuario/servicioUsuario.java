@@ -38,7 +38,7 @@ public class servicioUsuario {
         // 1. UUID.randomUUID(): Genera un identificador único universal (UUID versión 4)
         // 2. .substring(0, 8): Toma los primeros 8 caracteres del UUID
 
-        String codigo = "DSMT-" + UUID.randomUUID().toString().substring(0,3).toUpperCase();
+        String codigo = "DSMP-" + UUID.randomUUID().toString().substring(0,3).toUpperCase();
         LocalDateTime expiracion = LocalDateTime.now().plusDays(7); // Genera fecha
 
         Usuario usuarioCreado  = Usuario.builder()
